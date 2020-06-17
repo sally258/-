@@ -87,6 +87,23 @@ for i in range(len(new_list)):
 print('\nSố lần xuất hiên nhiều nhất là: ',max)
 '''
 
+''' Bài 5.2
+import random
+my_list = [random.randint(1,10) for i in range(30)]
+print(my_list)
+new_list = [[],[]]
+for i in range(len(my_list)):
+    if my_list[i] not in new_list[0]:
+        new_list[0].append(my_list[i])
+        new_list[1].append(my_list.count(my_list[i]))
+print('\nSố lần xuất hiên nhiều nhất là: ',max(new_list[1]))
+print('Các phần tử có số lần xuất nhiều nhất: ',end=' ')
+for i in range(0, len(new_list[0])):
+    if new_list[1][i] == max(new_list[1]):
+        print(new_list[0][i],end=' ')    
+'''
+
+
 ''' 
 Bài 06: Viết chương trình đếm các chuỗi trong một list thỏa mãn:
         + Độ dài từ 2 trở lên
@@ -113,6 +130,20 @@ for i in range(len(list1)):
         if list1[i] == list2[i]:
             kt = 'Có phần tử trùng nhau'
             break
+print(kt)
+'''
+
+''' Bài 7.2
+import random
+list1 = random.sample(range(1, 21),10)
+list2 = random.sample(range(18, 41),10)
+print(list1)
+print(list2)
+kt = "Không có phần tử trùng nhau"
+for i in list1:
+    if i in list2:
+        kt = "Có phần tử trùng nhau"
+        break
 print(kt)
 '''
 
@@ -157,5 +188,15 @@ n = int(input('Nhập số lượng bài hát: '))
 list_music = set()
 for i in range(n):
     list_music.add(input('Nhập id bài hát: '))
+print(len(list_music))
+'''
+
+''' Bài 10.2
+n = int(input('Nhập số lượng bài hát: '))
+list_music = []
+for i in range(n):
+    r = input()
+    if r not in list_music:
+        list_music.append(r)
 print(len(list_music))
 '''
